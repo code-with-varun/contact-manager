@@ -23,7 +23,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+if (!empty($_SERVER['HTTPS'])) 
+{
+  //echo 'https is enabled';
+ $config['base_url'] = 'https://apps.1lybio.in/contact-manager';
+
+}
+else
+{
+//echo 'http is enabled'."\n";
+ $config['base_url'] = 'http://localhost/contact-manager';
+
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +46,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
